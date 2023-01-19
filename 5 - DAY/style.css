@@ -1,0 +1,329 @@
+:root {
+  --azul: #7ba2ff;
+  --vermelho: #fa7373;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #42a7a1;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border-radius: 3px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  width: 280px;
+  height: 220px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 5px 5px 6px 4px rgba(0, 0, 0, 0.2);
+}
+
+.report h1,
+.revenue p {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+}
+
+.report p,
+.revenue h2 {
+  font-size: 11px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-weight: 200;
+}
+
+.revenue h2 {
+  text-align: end;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f1ba64;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  padding: 15px 10px;
+}
+
+.graph {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.subtitle {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-bottom: 15px;
+  grid-column: 1/-1;
+  position: relative;
+}
+
+.subtitle::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgba(51 51 51 / 0.1);
+  bottom: 5px;
+}
+
+.subtitle span {
+  font-size: 9px;
+  font-weight: 500;
+  margin-left: 27px;
+  position: relative;
+  color: #606060;
+}
+
+.subtitle span:before {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 3px;
+  border-radius: 3px;
+  bottom: 35%;
+  left: -15px;
+}
+.views::before {
+  background-color: var(--vermelho);
+}
+.purchases::before {
+  background-color: var(--azul);
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.view-graph {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  position: relative;
+}
+
+.view-graph::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 2px;
+  background: rgba(51 51 51 / 0.1);
+  bottom: 5px;
+}
+
+.view-graph .dot {
+  background-color: var(--vermelho);
+}
+
+.view-graph :nth-child(1) {
+  top: 39px;
+}
+
+.view-graph :nth-child(2) {
+  top: 5px;
+}
+
+.view-graph :nth-child(3) {
+  top: 15px;
+}
+
+.view-graph :nth-child(4) {
+  top: 4px;
+}
+
+.view-graph :nth-child(5) {
+  top: 31px;
+}
+
+.view-graph :nth-child(6) {
+  top: 41px;
+}
+
+.view-graph :nth-child(7) {
+  top: 13px;
+}
+
+.purchases-graph {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: center;
+  position: relative;
+  position: relative;
+}
+
+.purchases-graph::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 2px;
+  background: rgba(51 51 51 / 0.1);
+  bottom: 5px;
+  z-index: 1;
+}
+
+.purchases-graph .dot {
+  background-color: var(--azul);
+}
+
+.purchases-graph :nth-child(1) {
+  top: 13px;
+}
+
+.purchases-graph :nth-child(2) {
+  top: 3px;
+}
+
+.purchases-graph :nth-child(3) {
+  top: 17px;
+}
+
+.purchases-graph :nth-child(4) {
+  top: 8px;
+}
+
+.purchases-graph :nth-child(5) {
+  top: 14px;
+}
+
+.purchases-graph :nth-child(6) {
+  top: 26px;
+}
+
+.purchases-graph :nth-child(7) {
+  top: 17px;
+}
+
+.days {
+  display: flex;
+  justify-content: space-around;
+  font-size: 9px;
+  grid-column: 1/-1;
+  margin-top: 5px;
+}
+
+svg {
+  position: absolute;
+  top: 21px;
+  right: -40px;
+}
+
+.line-views {
+  fill: none;
+  stroke: var(--vermelho);
+  stroke-width: 2px;
+}
+
+.line-purchases {
+  fill: none;
+  stroke: var(--azul);
+  stroke-width: 2px;
+}
+
+.view-graph :nth-child(1) .box-price {
+  top: 47px;
+}
+
+.box-price {
+  position: absolute;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 7px 6px;
+  opacity: 1;
+  border-radius: 2px;
+  color: #fff;
+}
+
+.view-graph .box-price::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: var(--vermelho);
+  position: absolute;
+  bottom: -3px;
+  transform: rotate(45deg);
+  right: 11px;
+}
+
+.purchases-graph .box-price::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: var(--azul);
+  position: absolute;
+  bottom: -3px;
+  transform: rotate(45deg);
+  right: 9px;
+}
+
+.view-graph .box-price {
+  transform: translate(-1300px, -780px);
+  background-color: var(--vermelho);
+}
+
+.purchases-graph .box-price {
+  transform: translate(-500px, -230px);
+  background-color: var(--azul);
+}
+
+@keyframes slideUpRed {
+  0% {
+    opacity: 0;
+    transform: translate(-13px, -78px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-13px, -85px);
+  }
+}
+
+.view-graph .dot:hover .box-price {
+  animation: slideUpRed 0.5s forwards;
+}
+
+@keyframes slideUpBlue {
+  0% {
+    opacity: 0;
+    transform: translate(-9.5px, -41px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-9.5px, -48px);
+  }
+}
+
+.purchases-graph .dot:hover .box-price {
+  animation: slideUpBlue 0.5s forwards;
+}

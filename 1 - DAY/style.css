@@ -1,0 +1,100 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 5px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: linear-gradient(
+    49deg,
+    rgba(67, 59, 159, 1) 0%,
+    rgba(78, 195, 201, 1) 100%
+  );
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+div,
+p {
+  margin: 0;
+  padding: 0;
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+p {
+  font-size: 2rem;
+  font-family: "Courier New", "Courier", sans-serif;
+  color: #fff;
+}
+
+.day {
+  font-size: 82px;
+  text-align: center;
+  font-weight: bold;
+  line-height: 60px;
+  margin-top: 6px;
+}
+
+.challenger {
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+.numbers {
+  display: flex;
+  flex-direction: row;
+}
+
+.number-1 {
+  height: 100px;
+  width: 24px;
+  background: #fff;
+  position: absolute;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+}
+
+.number-1::before {
+  content: "";
+  display: block;
+  height: 40px;
+  width: 20px;
+  left: -15px;
+  background: #fff;
+  position: absolute;
+  z-index: -99;
+  border-radius: 4px;
+  transform: rotate(45deg);
+}
+
+.number-0 {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: 24px solid #fff;
+  position: absolute;
+  box-sizing: border-box;
+  box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+}
+
+.first {
+  left: 17px;
+  z-index: -98;
+}
+.second {
+  left: 100px;
+  z-index: -100;
+}
