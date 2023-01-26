@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,400);
+* {
+  margin: 0;
+  padding: 0;
+}
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #333;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+  background-color: #242424;
+  border-radius: 50%;
+  border: 6px solid #3a3a3a;
+}
+
+.dots-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  position: absolute;
+  height: 2px;
+  width: 180px;
+  transform: rotateZ(calc(var(--i) * 6deg));
+}
+
+.dot::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #d3d3d3;
+  height: 2px;
+  width: 2px;
+}
+
+.dot::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 2px;
+  width: 2px;
+  background: #fff;
+}
+
+svg {
+  position: absolute;
+}
+
+svg circle {
+  fill: transparent;
+  stroke: #f85b5b;
+  stroke-width: 3px;
+  stroke-dasharray: 590;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  animation: volta-ao-mundo 5s linear infinite;
+}
+
+@keyframes volta-ao-mundo {
+  0% {
+    stroke-dashoffset: 590;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -590;
+  }
+}
+
+.content-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.date,
+.fit-container {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.time {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 100%;
+}
+
+.fit-container {
+  display: flex;
+}
+
+.pulse {
+  margin-right: 10px;
+}
+
+.pulse i {
+  margin-right: 3px;
+  color: #f85b5b;
+  animation: pulse 0.8s infinite forwards;
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(0.8);
+  }
+  from {
+    transform: scale(1);
+  }
+}
