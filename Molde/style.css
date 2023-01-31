@@ -1,0 +1,256 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+
+div{
+    margin:0;
+    padding: 0;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0 rgba(0,0,0,0.3);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.profile-images{
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: max-content;
+}
+
+.image{
+    position: relative;
+    width: 194px;
+    height: 194px;        
+    padding: 0;
+    transition: 0.4s ease-in;
+    cursor: pointer;
+    margin: 4px 0 0 4px;
+}
+
+
+.image:hover img{
+    filter: brightness(60%);
+    transition: 0.4s ease-in;
+}
+
+.circle{
+    position: absolute;
+    content:"";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #ec6565;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.4s ease-in;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    box-shadow: 2px 4px 10px 0 rgba(0,0,0,0.5);;
+
+}
+
+.image:hover .circle {
+    transition: 0.4s ease-in ;
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.circle::after{
+    content: "";
+    width: 4px;
+    height: 30px;
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.4s ease-in;
+    
+}
+
+.image:hover .circle::after {
+    transition: 0.4s ease-in;
+    width: 2px;
+    height: 15px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.circle::before{
+    content: "";
+    width: 30px;
+    height: 4px;
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.4s ease-in;
+}
+
+.image:hover .circle::before {
+    transition: 0.4s ease-in;
+    width: 15px;
+    height: 2px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.profile-info{
+  position:absolute;
+  z-index: 2;
+  top:0px;
+  visibility: hidden;
+}
+
+.profile-info.ativa{
+    visibility: visible;
+}
+
+.info-background{
+    transform: translate(0, -180px);
+    transition: ease-in-out 0.6s 0.6s;
+
+}
+
+.profile-info.ativa .info-background{
+    transform: translate(0, 0);
+    transition: ease-in-out 0.6s;
+
+}
+
+.info-image{
+    position: absolute;
+    z-index: 3;
+    top: -126px;
+    left: 152px;
+    transition: ease-out 0.6s 0.3s;
+}
+
+.profile-info.ativa .info-image{
+    top: 132px;
+    transition: ease-out 0.6s 0.3s;
+}
+
+.close-button{
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    top: -43px;
+    right: 20px;
+    height: 43px;
+    width: 43px;
+    border: none;
+    border-radius: 50%;
+    background-color: #ec6565;
+    transition: top ease-out 0.6s, visibility ease-out 0.6s, background-color ease-in-out 0.4s;
+}
+
+.profile-info.ativa .close-button{
+    top: 20px;
+    transition: top ease-out 0.6s 0.6s, background-color ease-in-out 0.4s;;
+}
+
+.close-button::after{
+    content: "";
+    width: 13px;
+    height: 3px;
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: ease-in-out 0.4s;
+}
+
+.close-button::before{
+    content: "";
+    width: 3px;
+    height: 13px;
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: ease-in-out 0.4s;
+}
+
+.profile-info.ativa .close-button:hover{
+    background-color: #fff;
+    transition: ease-in-out 0.4s;
+}
+
+.profile-info.ativa .close-button:hover:after,
+.profile-info.ativa .close-button:hover:before{
+    background-color: #ec6565;
+    transition: ease-in-out 0.4s;
+}
+
+.info-container{
+    position:absolute;
+    top: 400px;
+    height: 220px;
+    width: 100%;
+    text-align: center;
+    background-color: #ec6565;
+    transition: ease-out 0.6s 0.6s;
+
+}
+
+.profile-info.ativa .info-container{
+    top: 180px;
+    transition: ease-out 0.6s;
+
+}
+
+.info-image img{
+    height: 96px;
+    border-radius: 50%;
+    box-shadow: 4px 6px 15px 0 rgba(0,0,0,0.2);
+    border: solid 3px white;
+
+}
+
+.info-name{
+    padding-top: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    color: white;
+}
+
+.icon{
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    margin: 20px;
+    border: #fff solid 1px;
+    border-radius: 50%;
+    font-size: 19px;
+    transition: 0.4s;
+}
+
+.icon:hover{
+    color: #ec6565;
+    background: white;
+    transition: 0.4s ;
+}
